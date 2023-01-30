@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Document</title>
+</head>
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./image/header-logo.svg" alt="Лого">
+    </header>
+    <main class="content">
+        <section class="profile">
+            <div class="profile__items">
+                <img class="profile__avatar" src="./image/profile-avatar.jpg" alt="Жак-Ив Кусто">
+                <div class="profile__profile-info">
+                    <div class="profile__wrap">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button"></button>    
+                    </div>
+                    <p class="profile__text">Исследователь океана</p>
+                </div>
+            </div>
+            <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-karachaevsk-image.jpg" alt="Карачаевск">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Карачаевск</h2>
+                    <button class="elements__like"></button>
+                </div>    
+            </div>
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-elbrus-image.png" alt="Гора Эльбрус">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Гора Эльбрус</h2>
+                    <button class="elements__like"></button>
+                </div>  
+            </div>
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-dombai-image.png" alt="Домбаи">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Домбаи</h2>
+                    <button class="elements__like"></button>
+                </div>  
+            </div>
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-bashkorkostan.jpg" alt="Башкортостан">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Башкортостан</h2>
+                    <button class="elements__like"></button>
+                </div>  
+            </div>
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-altai.jpg" alt="Алтай">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Алтай</h2>
+                    <button class="elements__like"></button>
+                </div>  
+            </div>
+            <div class="elements__items">
+                <img class="elements__image" src="./image/element-tverskaya-oblast.jpg" alt="Тверская область">
+                <div class="elements__wrap">
+                    <h2 class="elements__title">Тверская область</h2>
+                    <button class="elements__like"></button>
+                </div>  
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__text">© 2020 Mesto Russia</p>
+    </footer>
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__close"></button>
+            <form class="form" name="form" method="post">
+                <fieldset class="popup__edit-form">
+                    <h1 class="popup__edit-title">Редактировать профиль</h1>
+                    <input class="input popup__edit-name" placeholder="Имя" type="text" value="Жак-Ив Кусто">
+                    <input class="input popup__edit-about" placeholder="О себе" type="text" value="Исследователь океана">
+                    <input class="popup__edit-button" type="submit" placeholder="Сохранить" value="Сохранить">
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

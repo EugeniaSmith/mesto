@@ -1,13 +1,15 @@
-.popup__edit-form {
+.form__edit-form {
     max-width: 358px;
     display: flex;
     flex-direction: column;
     border: none;
     padding: 0;
     margin-left: 36px;
+    padding-top: 111px;
 }
+
 @media screen and (max-width: 462px) {
-    .popup__edit-form{
+    .form__edit-form{
         margin: 0 auto;
         max-width: 238px;
     }

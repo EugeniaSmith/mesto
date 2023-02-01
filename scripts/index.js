@@ -1,29 +1,27 @@
-let editButton = document.querySelector(".profile__edit-button");
+let profile = document.querySelector(".profile");
+let editButton = profile.querySelector(".profile__edit-button");
+let profileTitle = profile.querySelector(".profile__title");
+let profileText = profile.querySelector(".profile__text");
 let popup = document.querySelector(".popup");
-let closeButton = document.querySelector(".popup__close");
-let handleEditButtonClick = () => {
+let closeButton = popup.querySelector(".popup__close-button");
+let formElement = document.querySelector(".form");
+let nameInput = form.querySelector(".form__input_name");
+let jobInput = form.querySelector(".form__input_about");
+let submitButton = form.querySelector(".form__edit-button");
+
+
+function handleEditButtonClick () {
     popup.classList.add("popup_opened");
 }
-let handleCloseButtonClick = () => {
+function handleCloseButtonClick () {
     popup.classList.remove("popup_opened");
+}
+function handleFormSubmit (evt) {
+    evt.preventDefault();
+    profileTitle.textContent = nameInput.value;
+    profileText.textContent = jobInput.value;
+    handleCloseButtonClick();
 }
 editButton.addEventListener("click", handleEditButtonClick);
 closeButton.addEventListener("click", handleCloseButtonClick);
-
-
-let formElement = document.querySelector(".form");
-let nameInput = document.querySelector(".popup__edit-name");
-let jobInput = document.querySelector(".popup__edit-about");
-
-function handleFormSubmit (evt) {
-    evt.preventDefault();
-
-    let profileTitle = document.querySelector(".profile__title");
-    let profileText = document.querySelector(".profile__text");
-    profileTitle.textContent = nameInput.value;
-    profileText.textContent = jobInput.value;
-}
-let submitButton = document.querySelector(".popup__edit-button"); 
-
 formElement.addEventListener('submit', handleFormSubmit);
-submitButton.addEventListener("click", handleCloseButtonClick);

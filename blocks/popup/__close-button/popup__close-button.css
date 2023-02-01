@@ -1,4 +1,4 @@
-.popup__close {
+.popup__close-button {
     background-image: url(../../../image/popup-CloseIcon.svg);
     background-repeat: no-repeat;
     background-color: transparent;
@@ -14,7 +14,7 @@
     opacity: 0.6;
 }
 @media screen and (max-width: 462px) {
-    .popup__close{
+    .popup__close-button{
         margin-left: 262px;
         min-width: 20px;
     }

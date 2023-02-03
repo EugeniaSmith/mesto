@@ -1,10 +1,10 @@
 .popup__container {
-    max-width: 462px;
+    width: 462px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     position: relative;
 }
 @media screen and (max-width: 462px) {
     .popup__container{
-        max-width: 282px;
+        width: 282px;
     }
 }

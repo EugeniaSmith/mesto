@@ -8,7 +8,7 @@
     cursor: pointer;
     border: none;
     padding: 0;
-    right: -8px;
+    right: -40px;
     top: -40px;
     position: absolute;
 }
@@ -17,8 +17,11 @@
 }
 @media screen and (max-width: 462px) {
     .popup__close-button{
-        margin-left: 262px;
         min-width: 20px;
+        min-height: 20px;
+        right: 0;
+        top: -36px;
+
         
     }
 }

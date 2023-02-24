@@ -4,7 +4,7 @@ let profileTitle = profile.querySelector('.profile__title');
 
 let addButton = document.querySelector('.profile__add-button');
 let closeAddButton = document.querySelector('.popup__close-button_type_add');
-let popupAdd = document.querySelector('.popup__type_add');
+let popupAdd = document.querySelector('.popup_type_add');
 let formAdd = document.querySelector('.form_type_add');
 let inputTitle = formAdd.querySelector('.form__input_type_title');
 let inputLink = formAdd.querySelector('.form__input_type_link');
@@ -48,8 +48,8 @@ let initialCards = [
   
 ];
 
-let popupImage = document.querySelector('.popup__type_images');
-let closeButtonImage = popupImage.querySelector('.popup__close-button_type_image');
+let popupImage = document.querySelector('.popup_type_images');
+let closeButtonImage = popupImage.querySelector('.popup__close-button-type-image');
 let image = popupImage.querySelector('.popup__image');
 let imageName = popupImage.querySelector('.popup__image-name');
 let elements = document.querySelector('.elements');

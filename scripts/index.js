@@ -48,7 +48,7 @@ let initialCards = [
   
 ];
 
-let popupImage = document.querySelector('.popup__type_images');
+let popupImage = document.querySelector('.popup__type-images');
 let closeButtonImage = popupImage.querySelector('.popup__close-button-image');
 let image = popupImage.querySelector('.popup__image');
 let imageName = popupImage.querySelector('.popup__image-name');

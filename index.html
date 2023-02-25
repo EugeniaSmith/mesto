@@ -40,12 +40,12 @@
                 <button class="elements__like" type="button"></button>
             </div>    
         </div>
-    </template>
-    <section class="popup">
+    </template> 
+    <section class="popup popup_type_profile">
         <div class="popup__container">
             <button class="popup__close-button" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="form" method="post">
+            <form class="form" name="form-profile" method="post">
                 <fieldset class="form__edit-form">
                     <input class="form__input form__input_type_name" name="name" placeholder="Имя" type="text">
                     <input class="form__input form__input_type_about" name="about" placeholder="О себе" type="text">
@@ -58,7 +58,7 @@
         <div class="popup__container popup__container_type_add">
             <button class="popup__close-button popup__close-button_type_add" type="button"></button>
             <h2 class="popup__title popup__title_type_add">Новое место</h2>
-            <form class="form form_type_add" name="form" method="post">
+            <form class="form form_type_add" name="form-add" method="post">
                 <fieldset class="form__edit-form form__edit-form_type_add">
                     <input class="form__input form__input_type_title" name="title" placeholder="Название" type="text">
                     <input class="form__input form__input_type_link" name="link" placeholder="Ссылка на картинку" type="url">

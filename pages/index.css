@@ -37,3 +37,7 @@
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__type-wrap/popup__type-wrap.css);
 @import url(../blocks/popup/__image-name/popup__image-name.css);
+@import url(../blocks/form/__input-error/form__error.css);
+@import url(../blocks/form/__input-error/_active/form__input-error_active.css);
+@import url(../blocks/form/__edit-button/_inactive/form__edit-button_inactive.css);
+@import url(../blocks/form/__input/_error/form__input_type_active.css);

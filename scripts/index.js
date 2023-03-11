@@ -14,6 +14,7 @@ const profileCloseButton = profilePopup.querySelector('.popup__close-button');
 const profileForm = document.forms['form-profile'];
 const nameInput = profileForm.querySelector('.form__input_type_name');
 const jobInput = profileForm.querySelector('.form__input_type_about');
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -47,6 +48,24 @@ const image = popupImage.querySelector('.popup__image');
 const imageName = popupImage.querySelector('.popup__image-name');
 const elements = document.querySelector('.elements');
 const template = document.getElementById('template__elements');
+const buttonSubmit = document.querySelector('.form__edit-button');
+const overlayPopup = document.querySelectorAll('.popup');
+
+function closePopupOverlay(evt) {
+  if (evt.currentTarget === evt.target) {
+    closePopup(evt.target);
+  }
+}
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup)
+  }
+}
+
+overlayPopup.forEach((item) => {
+  item.addEventListener('mousedown', closePopupOverlay);
+});
 
 profileEditButton.addEventListener('click', () => {
   nameInput.value = profileTitle.textContent;
@@ -116,7 +135,9 @@ formAdd.addEventListener('submit', (event) => {
   inputLink.value = '';
   renderCard(inputsNameLink, elements);
   closePopup(popupAdd);
+  
 })
+
 initialCards.forEach(function (inputsNameLink) {
   renderCard(inputsNameLink, elements);
 })

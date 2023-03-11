@@ -29,7 +29,7 @@ const setEventListeners = (formElement, options) => {
   const inputList = Array.from(formElement.querySelectorAll(options.inputSelector));
   const buttonElement = formElement.querySelector(options.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, options);
-  inputList.forEach((formInput, options) => {
+  inputList.forEach((formInput) => {
     formInput.addEventListener('input', () => {
       isValid(formElement, formInput, options);
       toggleButtonState(inputList, buttonElement, options);
@@ -66,6 +66,6 @@ const validationOptions = ({
     submitButtonSelector: '.form__edit-button',
     inactiveButtonClass: 'form__edit-button_inactive',
     inputErrorClass: 'form__input_type_active',
-    errorClass: 'form__input-error_active'
+    errorClass: 'form__error_active'
   }); 
   enableValidation(validationOptions);

@@ -1,5 +1,6 @@
 .form__edit-form {
     max-width: 358px;
+    max-height: 220px;
     display: flex;
     flex-direction: column;
     border: none;
@@ -12,6 +13,6 @@
     .form__edit-form{
         margin: 0 auto;
         max-width: 238px;
-        padding-top: 122px;
+        
     }
 }

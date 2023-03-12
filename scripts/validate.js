@@ -1,5 +1,5 @@
-const formElement = document.forms['form'];
-const formInput = document.querySelector('.form__input');
+const formElement = document.querySelector('.form');
+const formInput = formElement.querySelector('.form__input');
 
 
 const showInputError = (formElement, formInput, errorMessage, options) => {
@@ -41,21 +41,28 @@ const hasInvalidInput = (inputList) => {
   return inputList.some((formInput) => {
     return !formInput.validity.valid;
   })
-}; 
+};
+const enableButton = (buttonElement, options) => {
+  buttonElement.removeAttribute('disabled');
+  buttonElement.classList.remove(options.inactiveButtonClass);
+};
+//кнопка скрыта
+const disableButton = (buttonElement, options) => {
+  buttonElement.setAttribute('disabled', true);
+  buttonElement.classList.add(options.inactiveButtonClass);
+};
+
 const toggleButtonState = (inputList, buttonElement, options) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(options.inactiveButtonClass);
+    disableButton(buttonElement, options);
   } else {
-    buttonElement.classList.remove(options.inactiveButtonClass);
+    enableButton(buttonElement, options);
   }
 }; 
 
 const enableValidation = (options) => {
   const formList = Array.from(document.querySelectorAll(options.formSelector));
   formList.forEach((formElement) => {
-    formElement.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-    });
     setEventListeners(formElement, options);
   });
 };

@@ -7,10 +7,3 @@
     display: block;
     min-height: 30px;
 }
-@media screen and (max-width: 462px) {
-    .form__error{
-        font-size: 9px;
-        min-height: 20px;
-
-    }
-}

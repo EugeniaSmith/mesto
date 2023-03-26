@@ -1,3 +1,5 @@
+import {Card} from './Card.js'
+import {FormValidator} from './FormValidator.js'
 const profile = document.querySelector('.profile');
 const profileEditButton = profile.querySelector('.profile__edit-button');
 const profileTitle = profile.querySelector('.profile__title');
@@ -41,14 +43,26 @@ const initialCards = [
   }
   
 ];
+const validationOptions = ({
+  formSelector: '.form',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__edit-button',
+  inactiveButtonClass: 'form__edit-button_inactive',
+  inputErrorClass: 'form__input_type_active',
+  errorClass: 'form__error_active'
+});
+const validationProfile = new FormValidator(validationOptions, profilePopup)
+validationProfile.enableValidation()
+const validationPlace = new FormValidator(validationOptions, popupAdd)
+validationPlace.enableValidation()
+
 const popupImage = document.querySelector('.popup_type_images');
 const buttonImageClose = popupImage.querySelector('.popup__close-button-image');
 const image = popupImage.querySelector('.popup__image');
 const imageName = popupImage.querySelector('.popup__image-name');
 const elements = document.querySelector('.elements');
-const template = document.getElementById('template__elements');
-const buttonSubmit = document.querySelector('.form__edit-button');
 const popupList = document.querySelectorAll('.popup');
+
 
 function closePopupOverlay(evt) {
   if (evt.currentTarget === evt.target) {
@@ -83,40 +97,29 @@ profileCloseButton.addEventListener('click', () => {
 })
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
-const getCard = (item) => {
-  const cardElement = template.content.cloneNode(true);
-  const cardTitle = cardElement.querySelector('.elements__title');
-  const cardImage = cardElement.querySelector('.elements__image');
-  cardTitle.textContent = item.name;
-  cardImage.src = item.link;
-  cardImage.alt = item.name;
-  cardElement
-    .querySelector('.elements__like')
-    .addEventListener('click', function (event) {
-      event.target.classList.toggle('elements__like_active');
-   });
-  cardElement
-    .querySelector('.elements__trash')
-    .addEventListener('click', function (event) {
-      event.target.closest('.elements__items').remove();
-  })
-  
-  
-  cardImage.addEventListener('click', function() {
-    image.src = item.link;
-    image.alt = item.name;
-    imageName.textContent = item.name;
-    openPopup(popupImage);
-  })
-  return cardElement;
-};
+
+const handleOpenPopupCard = (item) => {
+  image.src = item.link;
+  image.alt = item.name;
+  imageName.textContent = item.name;
+  openPopup(popupImage);
+}
+const createCard = (item) => {
+  const card = new Card(item, '#template__elements', handleOpenPopupCard);
+ return card.generateCard(); 
+}
+
+initialCards.forEach((item) => {
+  elements.append(createCard(item));
+});
+const renderCard = (item, elements) => {
+  elements.prepend(createCard(item));
+}
+
 buttonImageClose.addEventListener('click', () => {
   closePopup(popupImage);
 })
 
-const renderCard = (item, elements) => {
-  elements.prepend(getCard(item));
-}
 
 profileAddButton.addEventListener('click', () => {
   openPopup(popupAdd);

@@ -84,7 +84,7 @@ profileEditButton.addEventListener('click', () => {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileText.textContent;
   openPopup(profilePopup);
-
+  resetInputs()
 });
 function handleProfileFormSubmit (event) {
   event.preventDefault();
@@ -123,6 +123,7 @@ buttonImageClose.addEventListener('click', () => {
 
 profileAddButton.addEventListener('click', () => {
   openPopup(popupAdd);
+  resetInputs();
 })
 buttonCloseAdd.addEventListener('click', () => {
   closePopup(popupAdd);
@@ -134,7 +135,6 @@ formAdd.addEventListener('submit', (event) => {
     link: inputLink.value
   };
   event.target.reset();
-  event.submitter.classList.add('form__edit-button_inactive');
   event.submitter.disabled = true;
   renderCard(inputsNameLink, elements);
   closePopup(popupAdd);

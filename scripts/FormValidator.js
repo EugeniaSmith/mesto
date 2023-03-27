@@ -15,10 +15,12 @@ export class FormValidator {
       this._setEventListeners()
     }
     resetInputs = () => {  
-      this._inputList.forEach((formSelector) => {
-        setEventListeners(formSelector);
-      });
+      this._inputList.forEach((inputSelector) => {
+        this._hideInputError(inputSelector);
+      })
+      _toggleButtonState();
       }
+      
     _showInputError = (inputSelector, errorMessage) => {
       this._formError = this._form.querySelector(`.${inputSelector.id}-error`);
       inputSelector.classList.add(this._inputErrorClass);

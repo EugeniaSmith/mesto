@@ -84,7 +84,7 @@ profileEditButton.addEventListener('click', () => {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileText.textContent;
   openPopup(profilePopup);
-  resetInputs()
+  validationProfile.resetInputs()
 });
 function handleProfileFormSubmit (event) {
   event.preventDefault();
@@ -123,7 +123,7 @@ buttonImageClose.addEventListener('click', () => {
 
 profileAddButton.addEventListener('click', () => {
   openPopup(popupAdd);
-  resetInputs();
+  validationPlace.resetInputs();
 })
 buttonCloseAdd.addEventListener('click', () => {
   closePopup(popupAdd);

@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Document</title>
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./image/header-logo.svg" alt="Лого">
+        <img class="header__logo" src="<%=require('./image/header-logo.svg')%>" alt="Лого">
     </header>
     <main class="content">
         <section class="profile">
             <div class="profile__items">
-                <img class="profile__avatar" src="./image/profile-avatar.jpg" alt="Жак-Ив Кусто">
+                <img class="profile__avatar" src="<%=require('./image/profile-avatar.jpg')%>" alt="Жак-Ив Кусто">
                 <div class="profile__profile-info">
                     <div class="profile__wrap">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -74,7 +73,7 @@
     <section class="popup popup_type_images">
         <div class="popup__type-wrap">
             <div class="popup__close-button-wrap">
-                <button class="popup__close-button-image" type="button"></button>
+                <button class="popup__close-button popup__close-button-image" type="button"></button>
             </div>
             <div class="popup__image-wrap">
                 <img class="popup__image" src="#" alt="">
@@ -82,6 +81,6 @@
             </div>    
         </div>  
     </section>
-    <script type="module" src="./scripts/index.js"></script>
 </body>
+
 </html>

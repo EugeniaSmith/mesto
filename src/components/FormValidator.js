@@ -18,7 +18,6 @@ export class FormValidator {
       this._inputList.forEach((inputSelector) => {
         this._hideInputError(inputSelector);
       })
-      _toggleButtonState();
       }
       
     _showInputError = (inputSelector, errorMessage) => {
@@ -65,3 +64,4 @@ export class FormValidator {
       })
     }
   }
+  
